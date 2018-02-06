@@ -1,0 +1,7 @@
+﻿Save Format v3.0(19990112)
+@begin Libraries
+ "bean.pbl" "";
+@end;
+@begin Objects 
+ "u_pokemon.sru" "bean.pbl";
+@end;
