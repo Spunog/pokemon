@@ -4,6 +4,8 @@
 @end;
 @begin Objects 
  "pokemon.sra" "pokemon.pbl";
+ "d_pokemon_list.srd" "pokemon.pbl";
  "p_pokemon_exe.srj" "pokemon.pbl";
+ "str_args.srs" "pokemon.pbl";
  "w_pokemon_main.srw" "pokemon.pbl";
 @end;

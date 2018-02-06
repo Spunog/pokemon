@@ -1,0 +1,7 @@
+﻿$PBExportHeader$str_args.srs
+global type str_args from structure
+	string		field
+	string		value
+	boolean		list
+end type
+
