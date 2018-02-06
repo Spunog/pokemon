@@ -1,0 +1,15 @@
+﻿$PBExportHeader$p_pokemon_exe.srj
+$PBExportComments$Generated Application Executable Project
+EXE:pokemon.exe,,0,0,1
+CMP:0,0,0,2,0,0
+COM:AlanRice
+DES:Quick Demo of restful api in Powerbuilder
+CPY:
+PRD:Pokenmon
+PVN:1,0,0,1
+PVS:1.0.0.1
+FVN:1,0,0,1
+FVS:1.0.0.1
+PBD:pokemon.pbl,,1
+
+ 

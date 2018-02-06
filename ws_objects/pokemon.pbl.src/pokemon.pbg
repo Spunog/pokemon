@@ -1,0 +1,9 @@
+﻿Save Format v3.0(19990112)
+@begin Libraries
+ "pokemon.pbl" "";
+@end;
+@begin Objects 
+ "pokemon.sra" "pokemon.pbl";
+ "p_pokemon_exe.srj" "pokemon.pbl";
+ "w_pokemon_main.srw" "pokemon.pbl";
+@end;
