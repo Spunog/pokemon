@@ -1,6 +1,6 @@
 ﻿$PBExportHeader$p_pokemon_exe.srj
 $PBExportComments$Generated Application Executable Project
-EXE:pokemon.exe,,0,0,1
+EXE:pokemon.exe,,0,1,1
 CMP:0,0,0,2,0,0,1
 COM:AlanRice
 DES:Quick Demo of restful api in Powerbuilder
@@ -15,6 +15,7 @@ PBD:pokemon.pbl,,1
 PBD:dao.pbl,,1
 PBD:bean.pbl,,1
 PBD:uicomponents.pbl,,1
+PBD:service.pbl,,1
 OBJ:C:\Users\SILVERSTONE\Development\Powerbuilder\Pokemon\bean.pbl,u_pokemon,u
 OBJ:C:\Users\SILVERSTONE\Development\Powerbuilder\Pokemon\dao.pbl,dao_pokemon,u
 OBJ:C:\Users\SILVERSTONE\Development\Powerbuilder\Pokemon\pokemon.pbl,pokemon,a
