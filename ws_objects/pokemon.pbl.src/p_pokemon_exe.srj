@@ -18,8 +18,11 @@ PBD:uicomponents.pbl,,1
 PBD:service.pbl,,1
 OBJ:C:\Users\SILVERSTONE\Development\Powerbuilder\Pokemon\bean.pbl,u_pokemon,u
 OBJ:C:\Users\SILVERSTONE\Development\Powerbuilder\Pokemon\dao.pbl,dao_pokemon,u
+OBJ:C:\Users\SILVERSTONE\Development\Powerbuilder\Pokemon\service.pbl,n_winhttp,u
 OBJ:C:\Users\SILVERSTONE\Development\Powerbuilder\Pokemon\pokemon.pbl,pokemon,a
 OBJ:C:\Users\SILVERSTONE\Development\Powerbuilder\Pokemon\uicomponents.pbl,u_pokemon_card,u
+OBJ:C:\Users\SILVERSTONE\Development\Powerbuilder\Pokemon\service.pbl,u_service_file,u
 OBJ:C:\Users\SILVERSTONE\Development\Powerbuilder\Pokemon\pokemon.pbl,d_pokemon_list,d
 OBJ:C:\Users\SILVERSTONE\Development\Powerbuilder\Pokemon\pokemon.pbl,w_pokemon_main,w
 OBJ:C:\Users\SILVERSTONE\Development\Powerbuilder\Pokemon\pokemon.pbl,str_args,s
+OBJ:C:\Users\SILVERSTONE\Development\Powerbuilder\Pokemon\pokemon.pbl,str_response,s
