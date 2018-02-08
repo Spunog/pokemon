@@ -1,0 +1,7 @@
+﻿$PBExportHeader$str_response.srs
+global type str_response from structure
+	boolean		success
+	string		message
+	any		result
+end type
+

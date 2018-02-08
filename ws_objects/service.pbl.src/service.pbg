@@ -1,0 +1,8 @@
+﻿Save Format v3.0(19990112)
+@begin Libraries
+ "service.pbl" "";
+@end;
+@begin Objects 
+ "n_winhttp.sru" "service.pbl";
+ "u_service_file.sru" "service.pbl";
+@end;

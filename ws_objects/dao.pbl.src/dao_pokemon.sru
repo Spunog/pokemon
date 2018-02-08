@@ -64,7 +64,7 @@ if ll_args_total > 0 then
 end if
 
 // Limit Results
-ls_request_url += '?limit=20'
+ls_request_url += '?limit=200'
 
 // Get Data Via RESTFul
 if ls_result_type = 'single' then
@@ -76,7 +76,15 @@ if ls_result_type = 'single' then
 	end if
 else
 	// Caching the full list results for testing
-	ls_string 	= '{"count":949,"previous":null,"results":[{"url":"https:\/\/pokeapi.co\/api\/v2\/pokemon\/1\/","name":"bulbasaur"},{"url":"https:\/\/pokeapi.co\/api\/v2\/pokemon\/2\/","name":"ivysaur"},{"url":"https:\/\/pokeapi.co\/api\/v2\/pokemon\/3\/","name":"venusaur"},{"url":"https:\/\/pokeapi.co\/api\/v2\/pokemon\/4\/","name":"charmander"},{"url":"https:\/\/pokeapi.co\/api\/v2\/pokemon\/5\/","name":"charmeleon"},{"url":"https:\/\/pokeapi.co\/api\/v2\/pokemon\/6\/","name":"charizard"},{"url":"https:\/\/pokeapi.co\/api\/v2\/pokemon\/7\/","name":"squirtle"},{"url":"https:\/\/pokeapi.co\/api\/v2\/pokemon\/8\/","name":"wartortle"},{"url":"https:\/\/pokeapi.co\/api\/v2\/pokemon\/9\/","name":"blastoise"},{"url":"https:\/\/pokeapi.co\/api\/v2\/pokemon\/10\/","name":"caterpie"},{"url":"https:\/\/pokeapi.co\/api\/v2\/pokemon\/11\/","name":"metapod"},{"url":"https:\/\/pokeapi.co\/api\/v2\/pokemon\/12\/","name":"butterfree"},{"url":"https:\/\/pokeapi.co\/api\/v2\/pokemon\/13\/","name":"weedle"},{"url":"https:\/\/pokeapi.co\/api\/v2\/pokemon\/14\/","name":"kakuna"},{"url":"https:\/\/pokeapi.co\/api\/v2\/pokemon\/15\/","name":"beedrill"},{"url":"https:\/\/pokeapi.co\/api\/v2\/pokemon\/16\/","name":"pidgey"},{"url":"https:\/\/pokeapi.co\/api\/v2\/pokemon\/17\/","name":"pidgeotto"},{"url":"https:\/\/pokeapi.co\/api\/v2\/pokemon\/18\/","name":"pidgeot"},{"url":"https:\/\/pokeapi.co\/api\/v2\/pokemon\/19\/","name":"rattata"},{"url":"https:\/\/pokeapi.co\/api\/v2\/pokemon\/20\/","name":"raticate"}],"next":"https:\/\/pokeapi.co\/api\/v2\/pokemon\/?limit=20&offset=20"}'
+	http 	= 	create httpclient  
+	li_rc 	= 	http.sendrequest( 'GET', ls_request_url)  
+	
+	if li_rc = 1 and http.GetResponseStatusCode() = 200 then  
+	  http.GetResponseBody(ls_string)  
+	end if
+	
+	
+	//ls_string 	= '{"count":949,"previous":null,"results":[{"url":"https:\/\/pokeapi.co\/api\/v2\/pokemon\/1\/","name":"bulbasaurx"},{"url":"https:\/\/pokeapi.co\/api\/v2\/pokemon\/2\/","name":"ivysaur"},{"url":"https:\/\/pokeapi.co\/api\/v2\/pokemon\/3\/","name":"venusaur"},{"url":"https:\/\/pokeapi.co\/api\/v2\/pokemon\/4\/","name":"charmander"},{"url":"https:\/\/pokeapi.co\/api\/v2\/pokemon\/5\/","name":"charmeleon"},{"url":"https:\/\/pokeapi.co\/api\/v2\/pokemon\/6\/","name":"charizard"},{"url":"https:\/\/pokeapi.co\/api\/v2\/pokemon\/7\/","name":"squirtle"},{"url":"https:\/\/pokeapi.co\/api\/v2\/pokemon\/8\/","name":"wartortle"},{"url":"https:\/\/pokeapi.co\/api\/v2\/pokemon\/9\/","name":"blastoise"},{"url":"https:\/\/pokeapi.co\/api\/v2\/pokemon\/10\/","name":"caterpie"},{"url":"https:\/\/pokeapi.co\/api\/v2\/pokemon\/11\/","name":"metapod"},{"url":"https:\/\/pokeapi.co\/api\/v2\/pokemon\/12\/","name":"butterfree"},{"url":"https:\/\/pokeapi.co\/api\/v2\/pokemon\/13\/","name":"weedle"},{"url":"https:\/\/pokeapi.co\/api\/v2\/pokemon\/14\/","name":"kakuna"},{"url":"https:\/\/pokeapi.co\/api\/v2\/pokemon\/15\/","name":"beedrill"},{"url":"https:\/\/pokeapi.co\/api\/v2\/pokemon\/16\/","name":"pidgey"},{"url":"https:\/\/pokeapi.co\/api\/v2\/pokemon\/17\/","name":"pidgeotto"},{"url":"https:\/\/pokeapi.co\/api\/v2\/pokemon\/18\/","name":"pidgeot"},{"url":"https:\/\/pokeapi.co\/api\/v2\/pokemon\/19\/","name":"rattata"},{"url":"https:\/\/pokeapi.co\/api\/v2\/pokemon\/20\/","name":"raticate"}],"next":"https:\/\/pokeapi.co\/api\/v2\/pokemon\/?limit=20&offset=20"}'
 end if
 	
 // Parse Response
@@ -90,6 +98,11 @@ if ls_result_type = 'single' then
 	l_u_pokemon = create u_pokemon
 	l_u_pokemon.of_set_name(json.GetItemString(ll_root, 'name'))
 	l_u_pokemon.of_set_weight(json.GetItemnumber(ll_root, 'weight'))
+	
+	// Save Sprite Info
+	ll_pokemon_item = json.GetItemObject(ll_root, "sprites")
+	l_u_pokemon.of_set_sprite_front(json.GetItemString(ll_pokemon_item, 'front_default'))
+
 	l_u_pokemon_arr[upperbound(l_u_pokemon_arr) + 1] = l_u_pokemon
 else
 	// List of Pokemon

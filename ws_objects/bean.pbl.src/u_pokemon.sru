@@ -13,7 +13,9 @@ PRIVATE:
 string 	i_s_name
 string	i_s_url
 long		i_l_weight
+string	i_s_sprite_front
 end variables
+
 forward prototypes
 public subroutine of_set_name (string as_name)
 public subroutine of_set_url (string as_url)
@@ -21,6 +23,8 @@ public function string of_get_url ()
 public function string of_get_name ()
 public function long of_get_weight ()
 public subroutine of_set_weight (long al_weight)
+public function string of_get_sprite_front ()
+public subroutine of_set_sprite_front (string as_sprite_front)
 end prototypes
 
 public subroutine of_set_name (string as_name);this.i_s_name = as_name
@@ -39,6 +43,12 @@ public function long of_get_weight ();return this.i_l_weight
 end function
 
 public subroutine of_set_weight (long al_weight);this.i_l_weight = al_weight
+end subroutine
+
+public function string of_get_sprite_front ();return this.i_s_sprite_front
+end function
+
+public subroutine of_set_sprite_front (string as_sprite_front);this.i_s_sprite_front = as_sprite_front
 end subroutine
 
 on u_pokemon.create
