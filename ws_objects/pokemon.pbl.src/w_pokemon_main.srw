@@ -97,6 +97,8 @@ this.dw_pokemon_list.sort()
 
 // Set focus to search
 this.sle_search.setfocus()
+
+
 end event
 
 event resize;Long ll_margin

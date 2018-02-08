@@ -3,5 +3,6 @@
  "uicomponents.pbl" "";
 @end;
 @begin Objects 
+ "u_picture.sru" "uicomponents.pbl";
  "u_pokemon_card.sru" "uicomponents.pbl";
 @end;
