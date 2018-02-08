@@ -1,5 +1,4 @@
-# Powerbuilder 2017
+# Powerbuilder 2017 - Testing new features with GIT and RESTFul API
 
-Git and RESTFul API test using new features in PB 2017.
-
-Using Pokemon API
+Simple app that uses Using Pokemon API:
+https://pokeapi.co/
